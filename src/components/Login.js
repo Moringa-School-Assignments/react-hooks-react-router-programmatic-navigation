@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
-function Login({ setIsLoggedIn }) {
+function Login({ setIsLoggedIn, isLoggedIn }) {
   const history = useHistory();
   const [formData, setFormData] = useState({
     username: "",
@@ -14,7 +14,9 @@ function Login({ setIsLoggedIn }) {
       [e.target.name]: e.target.value,
     });
   }
-
+  if(isLoggedIn){
+    return <Redirect to="/" />
+  }
   function handleSubmit(e) {
     e.preventDefault();
 

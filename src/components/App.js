@@ -16,7 +16,7 @@ function App() {
           <About />
         </Route>
         <Route exact path="/login">
-          <Login setIsLoggedIn={setIsLoggedIn} />
+          <Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>
         </Route>
         <Route exact path="/">
           <Home isLoggedIn={isLoggedIn} />
